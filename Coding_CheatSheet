@@ -14,18 +14,17 @@ ssh aubrmg001@asax.asc.edu
 rsync --partial -arv <ASC Login ID:path to remote file>  <path to local target folder>
 
 ## example
-rsync --partial -arv aubtss@asax.asc.edu://home/aubtss/class_shared/Tonia/fastqc/*  /Users/tonia_schwartz/Desktop/ClassData
+rsync --partial -arv aubrmg001@asax.asc.edu://home/aubrmg/class_shared/Graze/fastqc/*  /Users/Graze/Desktop/ClassData
 
 
 ########### PUSH file from Local computer to remote computer using the 
 rsync program ###########
-# Open terminal on local computer (or log into spirit - now your local 
-computer - and trasfer to a remove computer
+# Open terminal on local computer 
 # determine the path to the file you want to transfer
 rsync --partial -arv <local path and file> <ID:remote path to target folder>
 
 ## examples to push from my computer to ASC or Hopper
-rsync --partial -arv /Users/Tonia/Desktop/scripts/*  aubtss@asax.asc.edu:/home/aubtss/class_shared/Tonia
+rsync --partial -arv /Users/Graze/Desktop/scripts/*  aubrmg001@asax.asc.edu:/home/aubrmg/class_shared/Graze
 
 
 ################# Check accuracy of data transfers #######################
@@ -40,6 +39,11 @@ md5 <filename>
 
 # On mac all files
 find . -type f -exec md5  {} \; > md5_SeqCapMyLaptop.txt
+
+# On windows - use WSL (see ASC) or see https://knowledge.illumina.com/software/general/software-general-reference_material-list/000008482
+# 1. Press: Winsows key + R, and type cmd
+# 2. Use cd to navigate to the directory (cd path\to\directory)
+certutil -hashfile <filename> MD5
 
 ##################### Unzip a file
 gunzip FILENAME.gz
