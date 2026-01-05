@@ -3,10 +3,10 @@
 ########## Basic Code useful for Functional Genomic Course  #####
 #################################################################
 ########################  Login to Alabama Super computer
-ssh my_name@dmc.asc.edu
+ssh my_name@asax.asc.edu
 
 #Example Account
-ssh aubrmg@dmc.ascx.edu
+ssh aubrmg001@asax.asc.edu
 
 
 ######### PULL data using rsync
