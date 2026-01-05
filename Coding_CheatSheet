@@ -5,8 +5,8 @@
 ########################  Login to Alabama Super computer
 ssh my_name@dmc.asc.edu
 
-#Example Tonia's Account
-ssh aubtss@dmc.ascx.edu
+#Example Account
+ssh aubrmg@dmc.ascx.edu
 
 
 ######### PULL data using rsync
