@@ -42,7 +42,8 @@ find . -type f -exec md5  {} \; > md5_SeqCapMyLaptop.txt
 
 # On windows - use WSL (see ASC) or see https://knowledge.illumina.com/software/general/software-general-reference_material-list/000008482
 # 1. Press: Winsows key + R, and type cmd
-# 2. Use cd to navigate to the directory (cd path\to\directory)
+# 2. Use the file explorer to find the file and use Copy Address as Text (right click on the address bar) to get the path
+# 3. Use cd to navigate to the directory (cd path\to\directory)
 certutil -hashfile <filename> MD5
 
 ##################### Unzip a file
