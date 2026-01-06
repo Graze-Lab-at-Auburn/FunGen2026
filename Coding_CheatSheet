@@ -72,6 +72,10 @@ cd /opt/asn/apps
 ### list the programs
 ls -l
 
+############ checking disk space usage 
+### List the size of all files and directories in the current directory and its subdirectories
+du -ah
+
 ################ Editing files using VIM
 vim <scriptname>
 press i to start editing
