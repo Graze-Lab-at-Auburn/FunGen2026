@@ -50,14 +50,14 @@ cp ${SHAREDIR}/*.fastq  .
 ### Calculate the md5sum values of the file in the original folder and read (put) into a text file.
 md5sum {SHAREDIR}*.fastq > md5sum_Original.txt
 
-### Calculate the md5sum values of the files you just moved and read (put) into a text file in our a text file
+### Calculate the md5sum values of the files you just moved and read (put) into a text file.
 md5sum ./*.fastq >> md5sum_New.txt
 
 ######  Make a directory for this project and results in your home folder
-mkdir home/aubtss/Practice_Code_2024/md5sum_files
+mkdir -p /home/aubrmg001/Practice_Code_2026/md5sum_files
 
 ##### Move the md5sums text files back to your home folder
-mv md5sum.txt /home/aubtss/Practice_Code_2024/md5sum_files
+mv md5sum.txt /home/aubrmg001/Practice_Code_2026/md5sum_files
 
-mv md5sum_Original.txt /home/aubtss/Practice_Code_2024/md5sum_files
+mv md5sum_Original.txt /home/aubrmg001/Practice_Code_2026/md5sum_files
 
