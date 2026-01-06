@@ -1,20 +1,22 @@
 #!/bin/sh
 
 ############################################################################################
-###  	Title: Practice Script 1						
+###  	Title: Practice Script						
 ### 	Author: Rita Graze
 ###		Date: January, 2026
 ###		BIOL6850: Functional Genomics, Auburn University
 ###		
-###     Purpose: Learn to make a directory (folder) in scratch, move files, assign variables,
-###		and check error files. THERE ARE FOUR ERRORS IN THIS SCRIPT. Can you find them and make 
+###     Purpose: Practice making a directory (folder) in scratch, moving files, assigning
+###     variables,and checking error logs. 
+###
+###     THERE ARE FOUR ERRORS IN THIS SCRIPT! Can you find them and make 
 ###     it run correctly? Try to do this without AI.
 ###
 ###     Stuck? See hints below.  
 ###     HINT 1: Make sure your variable syntax is correct
 ###     HINT 2: Make sure your mkdir commands behave as expected
 ###     HINT 3: Doublecheck directories and file names are consistent
-###     HINT 4: Always check logs and output - even if it runs without error messages
+###     HINT 4: Always check logs and output
 ###
 ###     For running the script on the Alabama Super Computer:
 ###	    https://hpcdocs.asc.edu/content/pbs-queue-system
