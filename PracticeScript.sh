@@ -8,7 +8,13 @@
 ###		
 ###     Purpose: Learn to make a directory (folder) in scratch, move files, assign variables,
 ###		and check error files. THERE ARE FOUR ERRORS IN THIS SCRIPT. Can you find them and make 
-###     it run correctly?
+###     it run correctly? Try to do this without AI.
+###
+###     Stuck? See hints below.  
+###     HINT 1: Make sure your variable syntax is correct
+###     HINT 2: Make sure your mkdir commands behave as expected
+###     HINT 3: Doublecheck directories and file names are consistent
+###     HINT 4: Always check logs and output - even if it runs without error messages
 ###
 ###     For running the script on the Alabama Super Computer:
 ###	    https://hpcdocs.asc.edu/content/pbs-queue-system
@@ -39,8 +45,7 @@ mkdir -p ${DATADIR}
 
 ### Change (move) to the scratch directory you just made
 ### Example: cd /scratch/YOUR_ID/test
-cd {DATADIR}
-echo "Yea, directory made! Line 30 completed" > Notes.txt
+cd ${DATADIR}
 
 ####### Move the practice datafiles (all files with .fastq) from our shared directory to where you are, here (.)
 cp ${SHAREDIR}/*.fastq  .
@@ -54,10 +59,19 @@ md5sum {SHAREDIR}*.fastq > md5sum_Original.txt
 md5sum ./*.fastq >> md5sum_New.txt
 
 ######  Make a directory for this project and results in your home folder
-mkdir -p /home/aubrmg001/Practice_Code_2026/md5sum_files
+######  This code checks if the directory is created and outputs a log
+
+if mkdir /home/aubrmg001/Practice_Code_2026/md5sum_files; then
+	echo "Beep Boop, directory made!" > log.txt
+else
+    echo "Beep Boop, rut roh" > log.txt
+fi
 
 ##### Move the md5sums text files back to your home folder
 mv md5sum.txt /home/aubrmg001/Practice_Code_2026/md5sum_files
 
 mv md5sum_Original.txt /home/aubrmg001/Practice_Code_2026/md5sum_files
+
+##### Log that your script has completed
+echo "Script Completed" >> log.txt
 
