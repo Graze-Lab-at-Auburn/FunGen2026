@@ -38,7 +38,7 @@
 	## This will make it easier in following steps so you don't have to write out the whole directory everytime
 	##  IMPORTANT! 'aubrmg001' is MY (Rita Graze) class account identifier. You need to replace 'aubrmg001' with YOUR ID
 DATADIR=/scratch/aubrmg001/test2
-SHAREDIR=/home/aubrmg001/class_shared/
+SHAREDIR=/home/aubrmg001/graze_class/
 
 ######  Now use that variable to make the directory in SCRATCH for holding your data
 ###  Example: mkdir /scratch/YOUR_ID/fastqc
