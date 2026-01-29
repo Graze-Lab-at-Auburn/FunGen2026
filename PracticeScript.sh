@@ -30,8 +30,13 @@
 ###		run on asax
 ##############################################################################################
 
-#source /opt/asn/etc/asn-bash-profiles-special/modules.sh
-#module load <tool name >
+##This is not used in this practice script but you will need these lines to load modules
+##The module system allows you to specify software versions
+##The help document for asax is: https://hpcdocs.asc.edu/content/lmod-environment-modules
+##source /apps/profiles/modules_asax.sh.dyn
+##module load <ToolName/Version>
+
+
 
 ######### Your first goal is to make a directory in scratch for you to conduct your work #######
 ##### Assign a variable to the directory name that you plan to make. 
