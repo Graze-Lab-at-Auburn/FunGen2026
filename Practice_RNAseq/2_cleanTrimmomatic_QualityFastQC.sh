@@ -37,7 +37,7 @@ module load fastqc/0.10.1
 
 ## STOP. You need to replace the [number] with YOUR paths to 
 ##       make variables for your ASC ID so the directories are automatically made in YOUR directory
-MyID=[1]                        ## Example: MyID=aubtss
+MyID=[1]                        ## Example: MyID=aubrmg001
 
 # Variables: raw data directory (DD), working directory(WD), Quality after cleaning (PCQ), name of file containing the adpaters.
 WD=[2]                          ## Example: WD=/scratch/$MyID/PracticeRNAseq
