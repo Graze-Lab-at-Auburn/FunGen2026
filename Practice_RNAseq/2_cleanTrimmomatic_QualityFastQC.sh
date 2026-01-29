@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 ######## FunGen Course Instructions ############
 ## Purpose: The purpose of this script is to trim sequencing adapters and low quality regions from the sequence read data with Trimmomatic,
