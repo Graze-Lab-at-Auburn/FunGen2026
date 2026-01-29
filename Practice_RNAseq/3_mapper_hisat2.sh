@@ -50,7 +50,7 @@ set -x
 ## Replace the numbers in the brackets with Your specific information
   ## make variable for your ASC ID so the directories are automatically made in YOUR directory
   ## Replace the [#] with paths to define these variable
-MyID=aubtss          ## Example: MyID=aubtss
+MyID=aubrmg001          ## Example: MyID=aubrmg001
 
 WD=/scratch/$MyID/PracticeRNAseq                      ## Example:/scratch/$MyID/PracticeRNAseq  
 CD=/scratch/$MyID/PracticeRNAseq/CleanData             ## Example:/scratch/$MyID/PracticeRNAseq/CleanData   #   *** This is where the cleaned paired files are located from the last script
@@ -70,8 +70,8 @@ mkdir -p $RESULTSD
 ##################  Prepare the Reference Index for mapping with HiSat2   #############################
 cd $REFD
 ### Copy the reference genome (.fasta) and the annotation file (.gff3) to this REFD directory
-cp /home/${MyID}/class_shared/references/DaphniaPulex/PA42/${REF}.fasta .
-cp /home/${MyID}/class_shared/references/DaphniaPulex/PA42/${REF}.gff3 .
+cp /home/${MyID}/graze_class/references/DaphniaPulex/PA42/${REF}.fasta .
+cp /home/${MyID}/graze_class/references/DaphniaPulex/PA42/${REF}.gff3 .
 
 ###  Identify exons and splice sites on the reference genome
 gffread ${REF}.gff3 -T -o ${REF}.gtf               ## gffread converts the annotation file from .gff3 to .gft formate for HiSat2 to use.
@@ -135,7 +135,7 @@ cp *.txt ${RESULTSD}
  ## Move to the counts directory
 cd ${COUNTSD}
  ## run the python script prepDE.phy to prepare you data for downstream analysis.
-cp /home/${MyID}/class_shared/prepDE.py3 .
+cp /home/${MyID}/graze_class/prepDE.py3 .
 
  prepDE.py3 -i ${COUNTSD}
 
