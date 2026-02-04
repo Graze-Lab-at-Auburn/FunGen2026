@@ -55,7 +55,11 @@ cd ${DD}
 ## https://www.ncbi.nlm.nih.gov/bioproject?LinkName=sra_bioproject&from_uid=5206312
 ## For class only do the 6 that you are assigned, delete the other 4 from this list
 
-vdb-config --interactive
+## We must run vdb-config to force creation of the default config file, otherwise we will get an error. This is a 'hack'. 
+
+vdb-config --interactive > /dev/null 2>&1 <<EOF
+q
+EOF 
 
 fastq-dump -F --split-files SRR6819014
 fastq-dump -F --split-files SRR6819015
