@@ -63,7 +63,7 @@ cp ${SHAREDIR}/*.fastq .
 md5sum {SHAREDIR}/*.fastq 2> md5sum_Original.txt
 
 ### Calculate the md5sum values of the files you just moved and read (put) into a text file.
-md5sum ./*.fastq >> md5sum_New.txt
+md5sum ./*.fastq > md5sum_New.txt
 
 ######  Make a directory for this project and results in your home folder
 ######  This code checks if the directory is created and outputs a log
