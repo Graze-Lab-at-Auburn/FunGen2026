@@ -22,7 +22,7 @@
 ###	    https://hpcdocs.asc.edu/content/pbs-queue-system
 ### 	After you have this script in your home directory and you have made it executable using  
 ###     "chmod +x [script name]", then run the script by using "run_script [script name]"
-### 	Suggested paramenters are below to submit this script:
+### 	Suggested parameters are below to submit this script:
 ### 	queue: class
 ###		core: 1
 ###		time limit (HH:MM:SS): 01:00:00 
