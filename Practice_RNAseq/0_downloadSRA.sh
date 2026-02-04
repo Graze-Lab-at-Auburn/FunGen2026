@@ -22,7 +22,6 @@
 ########## Load Modules
 source /apps/profiles/modules_asax.sh.dyn
 module load sra
-module load fastqc/0.10.1
 
 ##########  Define variables and make directories
 ## Replace the numbers in the brackets with Your specific information
@@ -33,7 +32,6 @@ MyID=[1]          ## Example: MyID=aubrmg001
   ## Make variable that represent YOUR working directory(WD) in scratch, your Raw data directory (DD) and the pre or postcleaned status (CS).
 DD=[2]   			## Example: DD=/scratch/${MyID}/PracticeRNAseq/RawData
 WD=[3]				## Example: WD=/scratch/${MyID}/PracticeRNAseq
-RDQ=RawDataQuality
  
 ##  make the directories in SCRATCH for holding the raw data 
 ## -p tells it to make any upper level directories that are not there. Notice how this will also make the WD.
@@ -46,7 +44,7 @@ cd ${DD}
 	## this downloads the SRA file and converts to fastq
 	## -F 	Defline contains only original sequence name.
 	## -I 	Append read id after spot id as 'accession.spot.readid' on defline.
-	## splits the files into R1 and R2 (forward reads, reverse reads)
+	## --split-files splits the files into R1 and R2 (forward reads, reverse reads)
 
 ## These samples are from Bioproject PRJNA437447. An experiment on Daphnia pulex, 5 samples on ad lib feed, 5 samples on caloric restriction diet
 ## https://www.ncbi.nlm.nih.gov/bioproject?LinkName=sra_bioproject&from_uid=5206312
