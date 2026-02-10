@@ -87,7 +87,9 @@ fastq-dump -F --split-files SRR6819023
 ############## FASTQC to assess quality of the sequence data
 ## FastQC: run on each of the data files that have 'All' to check the quality of the data
 ## The output from this analysis is a folder of results and a zipped file of results and a .html file for each sample
-mkdir -p ${WD}/${RDQ}
+## Note, if the parent directory already exists using -p will result in an error.
+
+mkdir ${WD}/${RDQ}
 fastqc *.fastq --outdir=${WD}/${RDQ}
 
 #######  Tarball the directory containing the FASTQC results so we can easily bring it back to our computer to evaluate.
