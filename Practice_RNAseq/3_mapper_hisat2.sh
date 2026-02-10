@@ -62,6 +62,7 @@ RESULTSD=/home/$MyID/PracticeRNAseq/Counts_H_S          ## Example:/home/aubtss/
 REF=DaphniaPulex_RefGenome_PA42_v3.0                   ## This is what the "easy name" will be for the genome reference
 
 ## Make the directories and all subdirectories defined by the variables above
+## CHECK if the parent/child directories exist - if they do REMOVE the -p
 mkdir -p $REFD
 mkdir -p $MAPD
 mkdir -p $COUNTSD
