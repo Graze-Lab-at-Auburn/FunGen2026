@@ -50,7 +50,7 @@ adapters=AdaptersToTrim_All.fa  ## This is a fasta file that has a list of adapt
 				
 ## make the directories to hold the Cleaned Data files, and the directory to hold the results for assessing quality of the cleaned data.
 mkdir ${CD}
-mkdir ${WD}/${PCQ}
+mkdir -p ${WD}/${PCQ}
 
 ################ Trimmomatic ###################################
 ## Move to Raw Data Directory
