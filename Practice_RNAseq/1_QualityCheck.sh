@@ -40,7 +40,8 @@ cd ${DD}
 ############## FASTQC to assess quality of the sequence data
 ## FastQC: run on each of the data files that have 'All' to check the quality of the data
 ## The output from this analysis is a folder of results and a zipped file of results and a .html file for each sample
-##Note, if the parent directory already exists we don't use the -p 
+##Note, if the parent/child directories already exists we don't use the -p 
+##CHECK if the parent/child directories exist - if they do not you will need to add -p
 
 mkdir ${WD}/${RDQ}
 fastqc *.fastq --outdir=${WD}/${RDQ}
