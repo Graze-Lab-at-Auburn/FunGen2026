@@ -3,7 +3,7 @@
 ######### FunGen Course Instructions ############
 ## Purpose: The purpose of this script is to 
 ## 	Use FASTQC to evaluate the quality of the data: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-## Download from SRA (completed in script 0): Input Data: NA
+## Download from SRA (completed in script 0_downloadSRA): Input Data: NA
 ## 			Output: Downloaded read files, R1 and R2 files for each sample if paired-end data (FASTQ)
 ## FASTQC 	InPut: Downloaded SRA files .fastq
 ##		Output: is a folder for each file that contains a .html file to visualize the quality, and .txt files of quality statistics.
