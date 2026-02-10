@@ -31,7 +31,6 @@ MyID=[1]          ## Example: MyID=aubrmg001
 
   ## Make variable that represent YOUR working directory(WD) in scratch, your Raw data directory (DD) and the pre or postcleaned status (CS).
 DD=[2]   			## Example: DD=/scratch/${MyID}/PracticeRNAseq/RawData
-WD=[3]				## Example: WD=/scratch/${MyID}/PracticeRNAseq
  
 ##  make the directories in SCRATCH for holding the raw data 
 ## -p tells it to make any upper level directories that are not there. Notice how this will also make the WD.
