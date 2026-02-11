@@ -13,7 +13,7 @@
 ## 	suggested paramenters are below to submit this script.
 ## 		queue: class
 ##		core: 1
-##		time limit (HH:MM:SS): 01:00:00 
+##		time limit (HH:MM:SS): 04:00:00 
 ##		Memory: 1gb
 ##		run on asax
 ###############################################
