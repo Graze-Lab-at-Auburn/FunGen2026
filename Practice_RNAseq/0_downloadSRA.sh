@@ -53,7 +53,7 @@ cd ${DD}
 
 vdb-config --interactive > /dev/null 2>&1 <<EOF
 q
-EOF 
+EOF
 
 fastq-dump -F --split-files SRR6819014
 fastq-dump -F --split-files SRR6819015
