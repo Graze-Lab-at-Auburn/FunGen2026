@@ -160,8 +160,31 @@ sbatch -p dmc,uv,knl --qos=class -J TSS_quality --begin=2017-01-
 26T11:38:39 --requeue --mail-user=tss0019@auburn.edu -o TSS_quality.o%A -t 
 00:20:00 -N 1-1 -n 1 --mem-per-cpu=1000mb --constraint=uv|dmc
 
-###Check if the script is running
-qstat
+##################### check the status of your jobs
 
-# Cancel job
+qstat ##Displays the below - more options and explanations can be found at https://hpc.research.uts.edu.au/pbs/qstat/
+
+###The following items are displayed on a single line,	in the specified order,	separated by white space:
+##	       -  the job identifier assigned by PBS.
+##	       -  the job name given by	the submitter.
+##	       -  the job owner
+##	       -  the CPU time used
+##         -  the job state:
+##		    E -	 Job is	exiting	after having run.
+##		    H -	 Job is	held.
+##		    Q -	 job is	queued,	eligable to run	or routed.
+##		    R -	 job is	running.
+##		    T -	 job is	being moved to new location.
+##		    W -	 job is	waiting	for its	execution time
+##			 (-a option) to	be reached.
+##		    S -	 (Unicos only) job is suspend.
+
+	       -  the queue in which the job resides
+
+### Cancel job
 scancel <job ID>
+
+### Show Line Endings
+### For unix this should be a $, if you see ^M this is a windows (dos) line ending
+cat -e
+cat -v
