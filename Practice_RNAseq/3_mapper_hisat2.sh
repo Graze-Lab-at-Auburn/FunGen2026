@@ -95,7 +95,7 @@ ls | grep ".fastq" |cut -d "_" -f 1| sort | uniq > list    #should list Example:
 cd ${MAPD}
 
 ## move the list of unique ids from the original files to map
-mv ${CD}/list  . 
+mv ${CD}/list  .
 
 ## process the samples in the list, one by one using a while loop
 while read i;
@@ -110,7 +110,7 @@ do
     ### view: convert the SAM file into a BAM file  -bS: BAM is the binary format corresponding to the SAM text format.
     ### sort: convert the BAM file to a sorted BAM file.
     ### Example Input: SRR629651.sam; Output: SRR629651_sorted.bam
-  samtools view -@ 6 -bS "$i".sam > "$i".bam  
+  samtools view -@ 6 -bS "$i".sam > "$i".bam
 
     ###  This is sorting the bam, using 6 threads, and producing a .bam file that includes the word 'sorted' in the name
   samtools sort -@ 6  "$i".bam  -o  "$i"_sorted.bam
