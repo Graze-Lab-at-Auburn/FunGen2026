@@ -12,8 +12,8 @@
 #### Install the DESeq2 package if you have not already
 ## try http:// if https:// URLs are not supported
 #if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
 
+#install.packages("BiocManager")
 #BiocManager::install("DESeq2")
 
 ## Load the DESeq2 library 
