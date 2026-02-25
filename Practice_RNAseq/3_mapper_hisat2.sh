@@ -14,7 +14,7 @@
 ##                                                  Output: Sorted  .bam files
 ## Stringtie  Counting reads  Input: sorted .bam file
 ##                            Output:  Directories of counts files for Ballgown (R program for DGE)
-##              prepDE.py    Python script to create a counts matrics from the Stringtie output.  Inputs: Directory from Stringtie
+##              prepDE.py3    Python script to create a counts matrics from the Stringtie output.  Inputs: Directory from Stringtie
 ##                                                                                                Output:  .csv files of counts matrix
 ## For running the script on the Alabama Super Computer.
 ##  For more information: https://hpcdocs.asc.edu/content/slurm-queue-system
@@ -132,10 +132,10 @@ done<list
 ### these are your stats files from Samtools
 cp *.txt ${RESULTSD}
 
-### The prepDE.py is a python script that converts the files in your ballgown folder to a count matrix. 
+### The prepDE.py3 is a python script that converts the files in your ballgown folder to a count matrix. 
  ## Move to the counts directory
 cd ${COUNTSD}
- ## run the python script prepDE.phy to prepare you data for downstream analysis.
+ ## run the python script prepDE.py3 to prepare you data for downstream analysis.
 cp /home/${MyID}/graze_class/prepDE.py3 .
 
  prepDE.py3 -i ${COUNTSD}
