@@ -45,42 +45,59 @@ dim(coldata)
 head(coldata)
 
 
-#Check all sample IDs in colData are also in CountData and match their orders
+#Check all sample IDs in colData are also in CountData
 all(rownames(coldata) %in% colnames(countdata))
+#This reorders (and subsets) the columns of countdata so they match the exact order of rows in coldata.
+#The comma inside [ means you're indexing a 2D object — the empty space before the comma means "keep all rows", 
+#and rownames(coldata) after the comma selects and orders the columns.
+#When you pass a character vector as a column index in R, R doesn't just filter — 
+#it selects columns in the exact order specified by that vector. So if rownames(coldata) is 
+#c("sample3", "sample1", "sample2"), R will return the columns of countdata in that sequence: 
+#sample3 first, then sample1, then sample2, regardless of their original order.
 countdata <- countdata[, rownames(coldata)]
+#This checks all sample IDs are in colData AND in the same order as in CountData
 all(rownames(coldata) == colnames(countdata))
 
-
 ## Create the DESEQ dataset and define the statistical model (page 6 of the manual)
+
+#Note this generates a warning, but it doesn't impact the analysis.
+#The factors need to be set as data type factor, and they start out as characters
+#So Deseq2 is converting the coldata to be factors before continuing - generating the warning
+#We will set our own factors and levels below
 dds <- DESeqDataSetFromMatrix(countData = countdata, colData=coldata,  design = ~treatment)
 #look at it
 dds
 
+## Set factors for statistical analyses and levels to our treatment names in the PHENO_DATA: 
+#Ad_lib is the control, Caloric_Restriction is the treatment group
+# example: #dds$condition <- factor(dds$condition, levels=c("untreated","treated"))
+dds$treatment <- factor(dds$treatment, levels=c("Ad_lib","Caloric_Restriction"))
 
+#Check the model matrix matches the column data
+model.matrix(~ treatment, data = coldata)
+coldata
 
 #####   Prefiltering    Manual - starting at  1.3.6 
 # Here we perform a minimal pre-filtering to remove rows that have less than 20 reads mapped.
+
 ## You can play around with this number to see how it affects your results!
 dds <- dds[ rowSums(counts(dds)) > 20, ]
 # look.  How many genes were filtered out?
 dds
 
-## set factors for statistical analyses
-###### Note you need to change condition to treatment (to match our design above)
-#  and levels to our treatment names in the PHENO_DATA: Ad_lib is the control, Caloric_Restriction is the treatment group
-# example:
-#dds$condition <- factor(dds$condition, levels=c("untreated","treated"))
-dds$condition <- factor(dds$treatment, levels=c("Ad_lib","Caloric_restriction"))
-
 
 ######     1.4 Differential expression analysis
 ### Question 2. Look at the manual - what is happening at this point?
+#This extracts the results table from the fitted model. 
+#By default it takes the last variable in your design formula (treatment) and compares 
+#the last level against the first (your reference level — in this case Caloric_restriction vs Ad_lib). 
 dds <- DESeq(dds)
 res <- results(dds)
+###  Question 3. What does each column of res mean?
 res
 
 
-###  Question 3. What does each column mean?
+
 # We can order our results table by the smallest adjusted p value:
   resOrdered <- res[order(res$padj),]
   resOrdered
@@ -93,8 +110,8 @@ res
   summary(res05)
   sum(res05$padj < 0.05, na.rm=TRUE)
 
-  
-  
+  #View the most significant genes
+  head(res[order(res$padj),], 10)
   
   
 ###    1.5.1 MA-plot
@@ -105,9 +122,10 @@ res
   
   #After calling plotMA, one can use the function identify to interactively detect the row number of individual genes by clicking on the plot. 
   # One can then recover the gene identiers by saving the resulting indices:
-  idx <- identify(res$baseMean, res$log2FoldChange)
+#Note, this is cool - but doesn't play well with R Studio's Plots viewer
+ # idx <- identify(res$baseMean, res$log2FoldChange)
     # after selecting a gene. You need to press escape to move on
-  rownames(res)[idx]
+ # rownames(res)[idx]
 
     
 ##  1.5.2 Plot counts - sanity check!
