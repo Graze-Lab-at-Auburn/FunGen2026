@@ -93,15 +93,15 @@ dds
 #the last level against the first (your reference level — in this case Caloric_restriction vs Ad_lib). 
 dds <- DESeq(dds)
 res <- results(dds)
-###  Question 3. What does each column of res mean?
+###  Question 2. What does each column of res mean?
 res
-
 
 
 # We can order our results table by the smallest adjusted p value:
   resOrdered <- res[order(res$padj),]
   resOrdered
 # We can summarize some basic tallies using the summary function the default is p<0.1.
+###  Question 3. Make a “Manuscript Ready” Table of results for YOUR data, based on adjusted p-values < 0.1 and adjusted  p-value < 0.05. 
   summary(res)
 #How many adjusted p-values were less than 0.1?
   sum(res$padj < 0.1, na.rm=TRUE)
