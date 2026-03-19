@@ -75,7 +75,7 @@ cp /home/${MyID}/graze_class/references/DaphniaPulex/PA42/${REF}.fasta .
 cp /home/${MyID}/graze_class/references/DaphniaPulex/PA42/${REF}.gff3 .
 
 ###  Identify exons and splice sites on the reference genome
-gffread ${REF}.gff3 -T -o ${REF}.gtf               ## gffread converts the annotation file from .gff3 to .gft formate for HiSat2 to use.
+gffread ${REF}.gff3 -T -o ${REF}.gtf               ## gffread converts the annotation file from .gff3 to .gtf formate for HiSat2 to use.
 hisat2_extract_splice_sites.py ${REF}.gtf > ${REF}.ss
 hisat2_extract_exons.py ${REF}.gtf > ${REF}.exon
 
@@ -140,6 +140,6 @@ cp /home/${MyID}/graze_class/prepDE.py3 .
 
  prepDE.py3 -i ${COUNTSD}
 
-### copy the final results files (the count matricies that are .cvs) to your home directory. 
+### copy the final results files (the count matricies that are .csv) to your home directory. 
 cp *.csv ${RESULTSD}
 ## move these results files to your personal computer for downstream statistical analyses in R studio.
