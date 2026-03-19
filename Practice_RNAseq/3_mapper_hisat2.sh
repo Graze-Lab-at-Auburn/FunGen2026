@@ -8,7 +8,7 @@
 ##              use the python script to take the Stringtie results to make two counts matricies, one at the gene level and one at the transcript level
 ## HiSat2  Indexing   InPut: Reference genome file (.fasta), and annotation file (.gff3) (Optional)
 ##                    Output: Indexed genome 
-## HiSat2 Mapping     Input: Cleaned read files, paired (.fasq); Indexed genome
+## HiSat2 Mapping     Input: Cleaned read files, paired (.fastq); Indexed genome
 ##                    Output: Alignment .sam files  
 ## Samtools  Convert .sam to .bam and sort          Input: Alignment files,  .sam
 ##                                                  Output: Sorted  .bam files
